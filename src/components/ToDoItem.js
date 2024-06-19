@@ -13,6 +13,18 @@ const ToDoItemContainer = styled(Paper)`
   border-radius: 8px;
   padding: 5px;
   margin-bottom: 5px;
+  @media (max-width: 600px) {
+    padding: 5px 2px; /* Hide text on small screens */
+  }
+`;
+
+const StyledListItemText = styled(ListItemText)`
+  font-size: 10px;
+  color: gray;
+
+  @media (max-width: 600px) {
+    display: none; /* Hide text on small screens */
+  }
 `;
 
 const ToDoItem = ({ item, refreshItems }) => {
@@ -29,7 +41,7 @@ const ToDoItem = ({ item, refreshItems }) => {
     return new Date(date.toLocaleString("en-US", { timeZone: "Australia/Sydney" }));
   };
 
-  const displayDate = item.duedate ? toSydneyTime(new Date(item.duedate)).toISOString().split('T')[0] : 'Invalid Date';
+  const displayDate = item.duedate ? toSydneyTime(new Date(item.duedate)).toISOString().split('T')[0] : toSydneyTime(new Date()).toISOString().split('T')[0];
 
   const handleMarkDone = async () => {
     if (!currentUser || isSampleItem) {
@@ -112,10 +124,10 @@ const ToDoItem = ({ item, refreshItems }) => {
             />
           </Grid>
           <Grid item xs={1.5}>
-            <ListItemText primary={displayDate} style={{ fontSize: '12px', color: 'gray' }} />
+            <ListItemText primary={displayDate} style={{ fontSize: '10px', color: 'gray' }} />
           </Grid>
           <Grid item xs={1.5}>
-            <ListItemText primary={item.label} style={{ fontSize: '12px', color: 'gray' }} />
+            <StyledListItemText primary={item.label} />
           </Grid>
           {checked && (
             <Grid item xs={2} container justifyContent="flex-end">

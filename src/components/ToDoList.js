@@ -13,6 +13,10 @@ const ToDoContainer = styled(Box)`
   overflow-y: auto;
   padding: 10px;
   margin: 10px;
+  @media (max-width: 600px) {
+    margin: 10px 2px;
+    padding: 10px 2px;
+  }
 `;
 
 const ToDoList = () => {

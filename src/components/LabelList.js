@@ -6,7 +6,7 @@ const StyledLabelList = styled(Paper)`
   height: calc(100vh - 95px);
   overflow-y: auto;
   border-radius: 10px;
-  padding: 10px;
+  padding: 10px 5px;
 `;
 
 const StyledListItemText = styled(ListItemText)`
@@ -17,9 +17,9 @@ const StyledListItemText = styled(ListItemText)`
 
 const StyledListItem = styled(ListItem)`
   border-radius: 10px; /* Elliptical shape */
-  width: 93%;
+  width: 100%;
   height: 40px;
-  margin: 5px;
+  margin: 5px 0px;
   &:hover {
     background-color: #DFD0B8;
   }
@@ -53,7 +53,7 @@ const LabelList = ({ labels, selectedLabel, handleLabelClick, toDoItems }) => {
                 {getLabelCount(label)}
               </Typography>
             }
-            style={{ paddingLeft: label === 'All' ? '0' : '15px' }} // Indent labels under "All"
+            style={{ paddingLeft: label === 'All' ? '0' : '10px' }} // Indent labels under "All"
             id={`list-item-text-${label}`}  
           />
         </StyledListItem>

@@ -11,6 +11,9 @@ const MainContent = styled(({ themeMode, ...other }) => <Paper {...other} />)`
   height: calc(100vh - 75px);
   overflow-y: auto;
   margin-right: 30px;
+  @media (max-width: 1000px) {
+    margin-right: 5px; /* Reduce margin on small screens */
+  }
 `;
 
 const Layout = ({ themeMode, toggleTheme, children }) => (
