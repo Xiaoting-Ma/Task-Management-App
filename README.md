@@ -1,70 +1,125 @@
-# Getting Started with Create React App
+# DuoTask
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+DuoTask is a task management application designed to help users efficiently organize and manage their tasks. The application leverages modern web technologies to provide a seamless user experience.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- User authentication using Firebase Authentication
+- Task creation, editing, and deletion
+- Task categorization and prioritization
+- Responsive design for desktop and mobile devices
+- Real-time updates with Firestore
+- Backend API with Node.js and Express
+- Database management using PostgreSQL via Supabase
+- Deployment on Vercel with continuous integration and automated deployment
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Frontend**: React, Material-UI, Axios
+- **Backend**: Node.js, Express
+- **Database**: PostgreSQL (Supabase)
+- **Authentication**: Firebase Authentication
+- **Hosting**: Vercel
+- **CI/CD**: GitHub Actions
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Project Setup
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Before you begin, ensure you have met the following requirements:
 
-### `npm run build`
+- Node.js and npm installed
+- Firebase account and project setup
+- Supabase account and project setup
+- Vercel account for deployment
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone the repository:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```bash
+   git clone https://github.com/Xiaoting-Ma/Task-Management-App.git
+   cd Task-Management-App
 
-### `npm run eject`
+2. Install the dependencies:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    ```bash
+    npm install
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Firebase Configuration
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Go to the Firebase Console and create a new project.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. Enable Authentication and Firestore.
 
-## Learn More
+3. Obtain your Firebase config object and add it to your project:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    ```javascript
+    // src/firebaseConfig.js
+    const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_PROJECT_ID.appspot.com",
+    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+    appId: "YOUR_APP_ID"
+    };
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    export default firebaseConfig;
 
-### Code Splitting
+### Supabase Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. Go to the Supabase Console and create a new project.
 
-### Analyzing the Bundle Size
+2. Obtain your Supabase URL and public API key, then add them to your environment variables:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+    ```env
+    // .env
+    REACT_APP_SUPABASE_URL=https://your-supabase-url.supabase.co
+    REACT_APP_SUPABASE_ANON_KEY=your-public-api-key
 
-### Making a Progressive Web App
+### Running the Application
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1. Start the development server:
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+    ```bash
+    npm start
+2. Open your browser and navigate to http://localhost:3000.
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+The application is deployed on Vercel. To deploy your own version:
 
-### `npm run build` fails to minify
+1. Push your code to GitHub.
+2. Go to the Vercel Dashboard and import your GitHub repository.
+3. Configure your environment variables in the Vercel project settings.
+4. Deploy your application.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Usage
+
+1. Register or log in with your account.
+2. Create, edit, or delete tasks.
+3. Organize tasks by categories and priorities.
+4. View and manage tasks in real-time.
+
+## Contributing
+
+Contributions are welcome! Please follow these steps to contribute:
+
+1. Fork the repository.
+2. Create a new branch (git checkout -b feature/your-feature-name).
+3. Commit your changes (git commit -m 'Add some feature').
+4. Push to the branch (git push origin feature/your-feature-name).
+5. Open a Pull Request.
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+## Contact
+
+If you have any questions, feel free to reach out:
+
+- Name: Xiaoting Ma
+- Email: xiaoting.ma012@gmail.com
+- GitHub: [Xiaoting-Ma](https://github.com/Xiaoting-Ma)
