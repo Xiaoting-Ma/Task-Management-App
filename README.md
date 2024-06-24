@@ -8,7 +8,6 @@ DuoTask is a task management application designed to help users efficiently orga
 - Task creation, editing, and deletion
 - Task categorization and prioritization
 - Responsive design for desktop and mobile devices
-- Real-time updates with Firestore
 - Backend API with Node.js and Express
 - Database management using PostgreSQL via Supabase
 - Deployment on Vercel with continuous integration and automated deployment
